@@ -1,0 +1,247 @@
+body {
+    display: flex;
+    justify-content: center;
+    flex-direction: column; 
+    align-items: center;
+    min-height: 100vh; 
+    font-family: 'Poppins', 'Lato', 'Open Sans', 'Helvetica Neue', Arial, sans-serif;    background-color: #f8f8ff;
+    background-image: linear-gradient(to top, #f9f9f9, #e6b4fa);
+    color: #5E376D;
+    padding: 20px;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+header {
+    margin-bottom: 30px;
+    max-width: 800px;
+    text-align: center;
+}
+
+header h1 {
+    color: #5E376D;
+    font-size: 46px;
+    border-bottom: 2px solid #280935; 
+    padding-bottom: 10px;
+}
+
+.botao-cta {
+    background-color: #F7E951;
+    color: #280935; 
+    padding: 12px 25px; 
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 600;
+    
+    text-decoration: none; 
+    display: inline-block; 
+    margin-top: 15px; 
+    transition: background-color 0.3s ease;
+}
+
+.botao-cta:hover {
+    background-color: #F7E951;
+}
+
+main {
+    width: 100%;
+    max-width: 800px;
+}
+
+main h1,h2,h3,h4 {
+    text-align: center;
+}
+
+.estru-bible ul{
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 2rem;
+    flex-direction: row;
+}
+
+.estru-bible li {
+    margin: 1.2rem;
+    padding: 1.2rem;
+    border: 2px solid #280935;
+    border-radius: 1.2rem;
+    background-color: #f7e95100;
+    font-weight: bold;
+}
+
+table {
+    width: 100%;
+    max-width: 800px; /* Mantém a largura consistente com o formulário */
+    border-collapse: collapse;
+    margin: 30px auto;
+    font-size: 15px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* Estilo do Cabeçalho da Tabela (Antigo Testamento / Novo Testamento) */
+table thead th {
+    background-color:  #280935; /* Azul Escuro */
+    color: #F7E951;
+    padding: 15px 10px;
+    text-align: center;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    /* Adiciona uma linha divisória visual entre os dois testamentos */
+    border-right: 2px solid  #b671d1; 
+}
+
+table thead th:last-child {
+    border-right: none;
+}
+
+/* Estilo das Células de Dados */
+tbody tr td {
+    padding: 10px 15px;
+    /* Alinha o texto das seções à esquerda para facilitar a leitura */
+    text-align: left; 
+    border-left: 1px solid #e0e0e0;
+    border-right: 1px solid #e0e0e0;
+}
+
+/* Estilo das Linhas (Alternância de cores) */
+tbody tr:nth-child(odd) {
+    background-color: #f9f9f9;
+}
+
+/* Linha divisória mais forte entre as colunas */
+tbody tr td:nth-child(1) {
+    border-right: 2px solid   #b671d1;/* Linha azul mais grossa após o AT */
+}
+
+.dica ul {
+    color: #f9f9f9;
+    list-style: none;
+    padding: 2rem;
+    display: flex;
+    flex-direction: row;   
+    flex-wrap: wrap; 
+    justify-content: flex-start; 
+    margin: 0 auto; 
+    max-width: 1200px; 
+}
+
+.dica li {
+    margin: 1.2rem;
+    padding: 1.4rem; 
+    border-radius: 1.2rem; 
+    background-color: #500f69; 
+    border: 2px solid #b671d1;
+    flex-basis: 250px; 
+    flex-grow: 1; 
+    flex-shrink: 1;
+    word-wrap: break-word; 
+    min-height: 150px;
+}
+
+form {
+    border-top: 2px solid #b671d1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px 0;
+}
+
+.tipo_leitura ul{
+    list-style: none;
+    padding: 2rem;
+    display: flex;
+    flex-direction: row;
+}
+
+.tipo_leitura li {
+    margin: 1.2rem;
+    padding: 1.4rem;
+    border-radius: 1.2rem;
+    background-color: #f7e951da;
+    border: 2px solid #500f69; 
+}
+
+input[type="number"], 
+select,
+input[type="time"] {
+    width: 100%;
+    padding: 12px; /* Aumenta o preenchimento para um visual mais robusto */
+    margin-top: 8px;
+    margin-bottom: 8px;
+    border: 2px solid #500f69; /* Borda cinza suave */
+    border-radius: 6px; /* Cantos levemente mais arredondados */
+    box-sizing: border-box;
+    background-color: #ffffff00; 
+    color: #333;
+    font-size: 16px; 
+    font-family: inherit; 
+    transition: all 0.3s ease-in-out;
+}
+
+input[type="number"]:focus,
+select:focus {
+    border-color: #b671d1; /* Borda azul primária em foco */
+    box-shadow: 0 0 0 3px rgba(63, 81, 181, 0.2); /* Sombra suave para destaque */
+    outline: none; /* Remove o contorno padrão feio do navegador */
+}
+
+select {
+    -webkit-appearance: none; 
+    -moz-appearance: none;
+    appearance: none; 
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath fill='%233f51b5' d='M9.293 12.95l.707.707L15 8.243 13.586 6.83l-4.293 4.293-4.293-4.293L3 8.243z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 10px top 50%;
+    background-size: 12px;
+}
+
+.tempo-diario-container {
+    width: 100%;
+    padding: 15px;
+    border: 2px solid #420772;
+    border-radius: 8px;
+    background-color: #fcfcfc00;
+    margin-bottom: 20px;
+    box-shadow: inset 0 1px 3px rgba(34, 19, 78, 0.05);
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 15px 25px;
+}
+
+.tempo-input-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.tempo-input-group label {
+    font-weight: 600;
+    margin-bottom: 3px;
+    color: #420772;
+}
+
+.tempo-input-group input {
+    background-color: #420772;
+    color: #F7E951;
+}
+
+input[type="submit"] {
+    background-color: #420772;
+    color: #F7E951;
+    padding: 14px 18px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 15px;
+    font-weight: bold;
+}
+

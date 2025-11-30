@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Otimizador de Leitura da Bíblia (PIB)</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}"></head>
+<body>
+    <header>
+        <h1>Planejador de Leitura Bíblica Otimizada</h1>
+        <h2>Faça o seu planejamento para conseguir otimizar a sua leitura da bíblia baseada no seu tempo livre</h2>
+        <p>Essa é uma ferramenta que permite unir seu tempo livre com a leitura bíblica, assim você pode se organizar e aproveitar para ler a palavra de Deus. Para isso, insira seus parâmetros e o tempo disponível em minutos por dia para gerar o plano semanal.</p>
+        <a href="#form-leitor" class="botao-cta"><b>Fazer planejamento agora</b></a>
+    </header>
+    <main>
+        <article>
+            <h2>Conhecendo a Bíblia</h2>
+            <h3>Estrutura da Bíblia</h3>
+                <p>A Bíblia é o plural da palavra grega "biblos" que significa livro, ou seja a bíblia é definida pela pluralidade de livros. A Bíblia possui 66 livros, sendo eles 39 do Antigo Testamento e 27 do Novo Testamento. Esses livros são agrupados conforme a sua classificação, essa divisão foi feita conforme a sua estrutura e época.
+                    Saiba que a biblia não foi escrita integralmente em uma única língua, mas sim em três línguas diferentes: Hebraico, Aramaico e Grego. O Antigo Testamento foi escrito principalmente em Hebraico, com algumas partes em Aramaico, enquanto o Novo Testamento foi escrito em Grego.</p>
+                <p>A Bíblia apresenta certa complexidade tendo em vista a diversidade de gêneros, contextos históricos, culturais e variações linguisticas. Ela apresenta mais de 40 autores tendo a escrita ao longo de 1600 anos, revelando dessa maneira cerca de 63779 referências cruzadas entre autores e livros. 
+                    Na sua composição além dos livros temos 1189 capítulos e mais de 31 mil versículos.</p>
+                <p>Além disso, a ordem dos livros posicionados na biblia não estão descritos de acordo com o tempo em que foram encontrados e ao menos na sua ordem cronológica mas sim priorizando uma ordem narrativa.</p>
+                <p>Na classificação dos livros do antigo testamento temos: Pentateuco, Livros Históricos, Livros Poéticos e Livros Proféticos. Já no novo testamento temos: Evangelhos, Atos dos Apóstolos, Epístolas Paulinas, Epístolas Gerais e Apocalipse.</p>
+            <div class="estru-bible">
+                <ul>
+                    <li>66 Livros</li>
+                    <li>1189 Capítulos</li>
+                    <li>+ 31 mil Versículos</li>
+                </ul>
+            </div>
+            <h4>Antigo Testamento</h4>
+                <p> O Antigo Testamento foi escrito é composto por 39 livros que foram escritos antes do nascimento de Jesus Cristo. Ele narra a história do povo de Israel, suas leis, profecias e poesias. O Antigo Testamento é dividido em várias seções, incluindo o Pentateuco (os cinco primeiros livros), os livros históricos, os livros poéticos e os livros proféticos.</p>
+                <div>
+                    <ul>
+                        <li>Pentateuco: Gênesis, Êxodo, Levítico, Números, Deuteronômio</li>
+                        <li>Livros Históricos: Josué, Juízes, Rute, 1 e 2 Samuel, 1 e 2 Reis, 1 e 2 Crônicas, Esdras, Neemias, Ester</li>
+                        <li>Livros Poéticos: Jó, Salmos, Provérbios, Eclesiastes, Cânticos</li>
+                        <li>Livros Proféticos Maiores: Isaías, Jeremias, Lamentações, Ezequiel</li> 
+                        <li>Livros Proféticos Menores: Daniel, Oséias, Joel, Amós, Obadias, Jonas, Miquéias, Naum, Habacuque, Sofonias, Ageu, Zacarias, Malaquias</li>
+                    </ul>
+                </div>
+                <h4>Novo Testamento</h4>
+                <p> O Novo Testamento é composto por 27 livros que foram escritos após o nascimento de Jesus Cristo. Ele narra a vida, ensinamentos, morte e ressurreição de Jesus, bem como a história da igreja primitiva. O Novo Testamento é dividido em várias seções, incluindo os Evangelhos, os Atos dos Apóstolos, as Epístolas Paulinas, as Epístolas Gerais e o Apocalipse.</p>
+                <div>
+                    <ul>
+                        <li>Evangelhos: Mateus, Marcos, Lucas e João</li>
+                        <li>Atos(Narrativo-Histórico): Atos dos Apóstolos</li>
+                        <li>Epístolas Paulinas: Romanos, 1 e 2 Coríntios, Gálatas, Efésios, Filipenses, Colossenses, 1 e 2 Tessalonicenses, 1 e 2 Timóteo, Tito, Filemom</li>
+                        <li>Epístolas Gerais: Hebreus, Tiago, 1 e 2 Pedro, 1, 2 e 3 João, Judas</li>
+                        <li>Apocalipse: Apocalipse</li>
+                    </ul>
+                </div>
+                </p>
+                <p>Para facilitar o entendimento observe a tabela abaixo</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Antigo Testamento (39 Livros)</th>
+                            <th>Novo Testamento (27 Livros)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Pentateuco - 5 livros</td>
+                            <td>Evangelhos - 4 livros</td>
+                        </tr>
+                        
+                        <tr>
+                            <td>Livros Históricos - 12 livros</td>
+                            <td>Atos dos Apóstolos - 1 livro</td>
+                        </tr>
+                        
+                        <tr>
+                            <td>Livros Poéticos - 5 livros</td>
+                            <td>Epístolas Paulinas - 13 livros</td>
+                        </tr>
+                        
+                        <tr>
+                            <td>Profetas Maiores - 5 livros</td>
+                            <td>Epístolas Gerais - 8 livros</td>
+                        </tr>
+                        
+                        <tr>
+                            <td>Profetas Menores - 12 livros</td>
+                            <td>Apocalipse - 1 livro</td>
+                        </tr>
+                        <tr>
+                    </tbody>
+                </table>
+            <p>Cada livro pertence a um testamento, possui um gênero, além disso, qunantidade definidas de capítulos e dentro de cada capitulo existem versículos.</p>
+            <p>Como foi explicado acima a Bíblia foi escrito em outras idiomas, com decorrer do tempo foram feitas traduções dos idiomas originais para os usuais. Assim esse plano de leitura é baseado na NVI.
+                Também conhecida como Nova Versão Internacional, é uma tradução moderna da Bíblia que busca equilibrar precisão e clareza, tornando-a acessível para leitores contemporâneos.</p>
+            </p>
+            <p>É importanto avisá-los desta decisão porque a mudança de versão pode acrescentar ou diminuir a quantidade de palavras.</p>
+            <h4>Por que ler a bíblia?</h4>
+                <p> Por meio da leitura podemos conhecer mais de deus e saber de suas promessas. A bíblia revela o amor de Deus pelo ser humano, nela encontramos mensagens de consolo e paz.</p>
+            <div class="tipo_leitura">
+                <h4>Como ler a Bíblia?</h4>
+                <p>Agora que você já conhece um pouco mais da estrutura da bíblia. Saiba que a bíblia pode ser lida sob diferentes perspectivas e com diferentes centros de interesse Leia com reverência e humildade, e sempre que possível procure ler trechos que tenham sentido completo. A leitura diário gera grande proveito para que possa meditar e reflitir no ensimento do que você observa. 
+                    Os três principais métodos de leitura são:</p>
+                <ul>
+                    <li><b>Leitura Teológica-Devocional:</b> Foca na aplicação pessoal e espiritual dos ensinamentos bíblicos. Esse tipo de leitura pode possuir ordem ou não essa questão irá variar com o direcionamento que o leitor deseja tomar.</li>
+                    <li><b>Leitura Literária:</b> Explora temas específicos ao longo de diferentes livros da Bíblia. A organização literária é o padrão em que encontramos a bíblia que busca ajudar o leitor a compreender devido ao contexto, época e estrutura textual.</li>
+                    <li><b>Leitura Cronológica-Histórica:</b> Analisa o contexto histórico e cultural dos textos bíblicos. A leitura cronológica é feita por meio da ordem definida por historiadores e arqueólogos que estimam o tempo de cada texto e quando ele foi redigido.</li>
+                </p>
+            </div>
+            <div class="Restrições na aplicação">
+                <h2>Restrições do Plano de Leitura</h2>
+                <p>O plano de estudos apresentam algumas restrições ou condições.</p>
+                <ul>
+                    <li>Os capítulos dos livros devem respeitar ordinariedade com excessão dos livros poéticos.</li>
+                    <li>Um capítulo só pode ser iniciado se o leitor possuir tempo dispoível para finalizá-lo.</li>
+                    <li>A leitura livre permite que os livros fiquem fora de ordem e de seu gênero textual</li>
+                    <li>Foi utilizada a versão da Nova Versão Internacional (NVI)</li>
+                    <li>Tempo mínimo disponível em pelo menos 1 dia da semana deve ser maior que 10 minutos</li>
+                </ul>                
+            </div>
+            <div class="dica">
+                <h2>Boas Práticas da Aplicação</h2>
+                    <ul>
+                        <li><b>Exatidão da PPM:</b> Tenha o valor exato da sua velocidade de leitura e com isso é possível estimar o seu ritmo para finalizar o plano.</li>
+                        <li><b>Opções ao Leitor:</b> Oferece diferentes opções que tornam cada escolha única e especial de aprendizado de leitura.</li>
+                        <li><b>Compreensão Textual:</b> A opção de restrição de gênero fornece ao leitor uma melhor compreensão do texto sem fugir do raciocinio textual.</li>
+                        <li><b>Rotina definida:</b> O plano de leitura se adapta a sua rotina com isso é feito de maneira individual e personalizável.</li>
+                        <li><b>Otimização da Leitura:</b> A ideia central da aplicação é otimizar o seu tempo lendo com o período disponível maximizando sua leitura.</li>
+                        <li><b>Flexibilidade Estrutural:</b> Permite que o leitor decida ler livros fora de ordem, tratando a Bíblia como uma biblioteca e não apenas como um único livro sequencial.</li>
+                    </ul>
+            </div>
+        </article>
+        <form method="POST" action="/" id="form-leitor"> 
+            <h2>Parâmetros do Leitor</h2>
+            <p>Para montar um plano de leitura personalizado precisamos de algumas informações necessárias da sua rotina, capacidade de leitura e forma que deseja ler.</p>
+            <p>Para calcularmos o tempo de leitura precisamos saber a sua velocidade de leitura. Isso é feito através da quantidade de palavras que você demora para ler em torno de um minuto.
+                Caso você não saiba acesse o teste da velocidade de leitura <a href="https://readingspeedtest.net/pt" target="_blank">clicando aqui</a></p>
+            <label for="ppm"><b>Velocidade de Leitura (PPM - Palavras por Minuto):</b></label>
+            <input type="number" id="ppm" name="ppm" value="250" min="50" required><br><br>
+            <p>Com o passar do tempo você pode sentir fadiga de leitura faça o teste e verifique se o seu PPM diminui com o tempo de leitura</p>
+            <label for="aplicar_fadiga"><b>Aplicar Cansaço (Diminuição do PPM após 60 min):</b></label>
+            <select id="aplicar_fadiga" name="aplicar_fadiga">
+                <option value="0">Não</option>
+                <option value="1">Sim</option>
+            </select><br><br>
+
+            <h2>Disponibilidade de Tempo</h2>
+            <p>Baseado na sua rotina defina quantas <b>horas | minutos</b> você tem disponível para dedicar à leitura em cada dia da semana:</p>
+            
+            <div class="tempo-diario-container">
+                {% set dias = ['segunda', 'terça', 'quarta', 'quinta', 'sexta', 'sábado', 'domingo'] %}
+                {% for dia in dias %}
+                    <div class="tempo-input-group"> 
+                        <label for="tempo_{{ dia }}">{{ dia|capitalize }}:</label>
+                        <input type="time" id="tempo_{{ dia }}" name="tempo_{{ dia }}" value="01:00" required>
+                    </div>
+                {% endfor %}
+            </div>
+            <h2>Tipo de Leitura</h2>
+                <p>Escolha o tipo de leitura que mais se adequa ao seu objetivo. Na Leitura Literária será priorizada a ordem com a qual a Bíblia já está organizada.</p>
+                <p>A Leitura Cronológica-Histórica irá priorizar a ordem dos fatos e acontecimentos da Bíblia, sendo assim seguirá uma ordem cronológica e organização dos textos.</p>
+                <p>A Leitura Livre será irrestrita no quesito de ordem, ou seja, no inicio de cada dia os livros serão de gêneros aleatórios sem depender do capitulo finalizado no dia anterior.</p>
+                <label for="tipo_leitura"><b>Selecionar Tipo de Leitura:</b></label>
+                <select id="tipo_leitura" name="tipo_leitura" onchange="toggleRestricaoGenero()">
+                    <option value="0">Leitura Literária</option>
+                    <option value="1">Leitura Cronológica-Histórica</option>
+                    <option value="2">Leitura Livre</option>
+                </select><br><br>
+                <div id="container_leitura_alternada" style="display: none;">
+                    <h2>Opção de Leitura Alternada</h2>
+                    <label for="leitura_alternada">Aplicar Leitura Alternada (Antigo Testamento / Novo Testamento):</label>
+                    <select id="leitura_alternada" name="leitura_alternada">
+                        <option value="1">Sim, aplicar leitura alternada</option>
+                        <option value="0">Não aplicar leitura alternada</option>
+                    </select><br><br>
+                </div>
+                <div id="restricao_genero_container" style="display: none;">
+                    <h2>Restrições de Foco e Ordem</h2>
+                        <label for="restricao_genero">Aplicar Restrição de Foco (Não trocar de gênero no mesmo dia):</label>
+                            <select id="restricao_genero" name="restricao_genero">
+                                <option value="1">Sim, aplicar foco diário</option>
+                                <option value="0">Não, permitir troca de gênero</option>                                
+                            </select><br><br>
+                            <br><br>
+                </div> 
+                <script>
+                    // Renomeando para atualizarOpcoesDinamicas para refletir a nova lógica
+                    function atualizarOpcoesDinamicas() {
+                        const seletorTipo = document.getElementById('tipo_leitura');
+                        const containerAlternada = document.getElementById('container_leitura_alternada');
+                        const containerGenero = document.getElementById('restricao_genero_container');
+                                
+                        const tipoSelecionado = seletorTipo.value;
+
+                        if (tipoSelecionado === '0' || tipoSelecionado === '1') {
+                            containerAlternada.style.display = 'block'; 
+                        } else {
+                            containerAlternada.style.display = 'none';
+                        }
+
+                        if (tipoSelecionado === '1') {
+                            containerGenero.style.display = 'block';
+                            containerAlternada.style.display = 'none'; 
+                        } else {
+                            containerGenero.style.display = 'block'; 
+                        }
+
+                        if (tipoSelecionado === '2') {
+                            containerGenero.style.display = 'block'; 
+                        } else {
+                            containerGenero.style.display = 'none'; 
+                        }
+                        
+                    }
+
+                    document.getElementById('tipo_leitura').onchange = atualizarOpcoesDinamicas;
+                    
+                    document.addEventListener('DOMContentLoaded', atualizarOpcoesDinamicas);
+                </script>
+
+            <input type="submit" value="EXECUTAR OTIMIZAÇÃO E GERAR PLANO">
+        </form>
+
+        <hr>
+        
+        {% if plano_gerado %}
+                <h2>✅ Resultado do Plano de Leitura</h2>
+                <p><strong>Status da Solução:</strong> {{ status_solucao }}</p>
+                
+                {% if status_solucao == 'Optimal' or status_solucao == 'Plano Concluído' %}
+                    
+                    <p><strong>Total Máximo de Palavras Lidas:</strong> {{ total_palavras | round(0) }}</p>
+                    
+                    {% if status_solucao == 'Plano Concluído' %}
+                        <p><strong>Tempo Total para Completar a Bíblia:</strong> {{ tempo_utilizado | round(2) }} minutos</p>
+                    {% else %}
+                        <p><strong>Tempo Total de Leitura Utilizado na Semana:</strong> {{ tempo_utilizado | round(2) }} minutos</p>
+                    {% endif %}
+
+                    <h3>Seu Plano de Leitura Diário:</h3>
+
+                    <table class="tabela-plano">
+                        <thead>
+                            <tr>
+                                <th>Data</th>
+                                <th>Dia da Semana</th>
+                                <th>Capítulos Designados</th>
+                                <th>Tempo Estimado (min)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for dia in plano_diario %}
+                                <tr>
+                                    <td>{{ dia.data }}</td>
+                                    <td>{{ dia.dia_semana }}</td>
+                                    <td>{{ dia.capitulos_str }}</td>
+                                    <td>{{ dia.tempo_usado }}</td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+
+                {% else %}
+                    <p>Não foi possível gerar um plano. Status: {{ status_solucao }}</p>
+                {% endif %}
+            {% endif %}
+            
+    </main>
+</body>
+</html>
