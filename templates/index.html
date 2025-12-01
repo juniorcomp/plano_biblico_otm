@@ -94,7 +94,9 @@
             </p>
             <p>É importanto avisá-los desta decisão porque a mudança de versão pode acrescentar ou diminuir a quantidade de palavras.</p>
             <h4>Por que ler a bíblia?</h4>
-                <p> Por meio da leitura podemos conhecer mais de deus e saber de suas promessas. A bíblia revela o amor de Deus pelo ser humano, nela encontramos mensagens de consolo e paz.</p>
+                <p> Por meio da leitura podemos conhecer mais de deus e saber de suas promessas. A bíblia revela o amor de Deus pelo ser humano, nela encontramos mensagens de consolo e paz. A Bíblia pode ser uma nova descoberta, e também pode ser vista 
+                    como a base da lei e moralidade, que regem a vida do cristão. De certa maneira a sua leitura pode transformar vidas, impactar coraçãoes e renovar mentes.
+                </p>
             <div class="tipo_leitura">
                 <h4>Como ler a Bíblia?</h4>
                 <p>Agora que você já conhece um pouco mais da estrutura da bíblia. Saiba que a bíblia pode ser lida sob diferentes perspectivas e com diferentes centros de interesse Leia com reverência e humildade, e sempre que possível procure ler trechos que tenham sentido completo. A leitura diário gera grande proveito para que possa meditar e reflitir no ensimento do que você observa. 
@@ -134,23 +136,15 @@
             <p>Para calcularmos o tempo de leitura precisamos saber a sua velocidade de leitura. Isso é feito através da quantidade de palavras que você demora para ler em torno de um minuto.
                 Caso você não saiba acesse o teste da velocidade de leitura <a href="https://readingspeedtest.net/pt" target="_blank">clicando aqui</a></p>
             <label for="ppm"><b>Velocidade de Leitura (PPM - Palavras por Minuto):</b></label>
-            <input type="number" id="ppm" name="ppm" value="250" min="50" required><br><br>
-            <p>Com o passar do tempo você pode sentir fadiga de leitura faça o teste e verifique se o seu PPM diminui com o tempo de leitura</p>
-            <label for="aplicar_fadiga"><b>Aplicar Cansaço (Diminuição do PPM após 60 min):</b></label>
-            <select id="aplicar_fadiga" name="aplicar_fadiga">
-                <option value="0">Não</option>
-                <option value="1">Sim</option>
-            </select><br><br>
-
+            <input type="number" id="ppm" name="ppm" value="200" min="50" required><br><br>
             <h2>Disponibilidade de Tempo</h2>
             <p>Baseado na sua rotina defina quantas <b>horas | minutos</b> você tem disponível para dedicar à leitura em cada dia da semana:</p>
-            
             <div class="tempo-diario-container">
                 {% set dias = ['segunda', 'terça', 'quarta', 'quinta', 'sexta', 'sábado', 'domingo'] %}
                 {% for dia in dias %}
                     <div class="tempo-input-group"> 
                         <label for="tempo_{{ dia }}">{{ dia|capitalize }}:</label>
-                        <input type="time" id="tempo_{{ dia }}" name="tempo_{{ dia }}" value="01:00" required>
+                        <input type="time" id="tempo_{{ dia }}" name="tempo_{{ dia }}" value="00:40" required>
                     </div>
                 {% endfor %}
             </div>
@@ -222,46 +216,74 @@
         <hr>
         
         {% if plano_gerado %}
-                <h2>✅ Resultado do Plano de Leitura</h2>
-                <p><strong>Status da Solução:</strong> {{ status_solucao }}</p>
-                
-                {% if status_solucao == 'Optimal' or status_solucao == 'Plano Concluído' %}
-                    
-                    <p><strong>Total Máximo de Palavras Lidas:</strong> {{ total_palavras | round(0) }}</p>
-                    
-                    {% if status_solucao == 'Plano Concluído' %}
-                        <p><strong>Tempo Total para Completar a Bíblia:</strong> {{ tempo_utilizado | round(2) }} minutos</p>
-                    {% else %}
-                        <p><strong>Tempo Total de Leitura Utilizado na Semana:</strong> {{ tempo_utilizado | round(2) }} minutos</p>
-                    {% endif %}
+    <h2>✅ Resultado do Plano de Leitura</h2>
+    <div class="status-badge {{ 'status-success' if status_solucao == 'Optimal' or status_solucao == 'Plano Concluído' else 'status-warning' }}">
+        <span style="font-size: 24px;">
+            {% if status_solucao == 'Optimal' or status_solucao == 'Plano Concluído' %}
+            {% endif %} <!-- Esta linha (endif) estava faltando -->
+        </span>
+        <div>
+            <strong>Status: {{ status_solucao }}</strong><br>
+        </div>
+    </div>
+    
+    {% if status_solucao == 'Optimal' or status_solucao == 'Plano Concluído' %}
+        
+        <p><strong>Total Máximo de Palavras Lidas:</strong> {{ total_palavras | round(0) }}</p>
+        
+        {% if status_solucao == 'Plano Concluído' %}
+            <p><strong>Tempo Total para Completar a Bíblia:</strong> {{ tempo_utilizado | round(2) }} minutos</p>
+        {% else %}
+            <p><strong>Tempo Total de Leitura Utilizado na Semana:</strong> {{ tempo_utilizado | round(2) }} minutos</p>
+        {% endif %}
 
-                    <h3>Seu Plano de Leitura Diário:</h3>
+        <h3>Seu Plano de Leitura Diário:</h3>
 
-                    <table class="tabela-plano">
-                        <thead>
-                            <tr>
-                                <th>Data</th>
-                                <th>Dia da Semana</th>
-                                <th>Capítulos Designados</th>
-                                <th>Tempo Estimado (min)</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {% for dia in plano_diario %}
-                                <tr>
-                                    <td>{{ dia.data }}</td>
-                                    <td>{{ dia.dia_semana }}</td>
-                                    <td>{{ dia.capitulos_str }}</td>
-                                    <td>{{ dia.tempo_usado }}</td>
-                                </tr>
-                            {% endfor %}
-                        </tbody>
-                    </table>
+        <table class="tabela-plano">
+            <thead>
+                <tr>
+                    <th>Data</th>
+                    <th>Dia da Semana</th>
+                    <th>Capítulos(clique para ler)</th>
+                    <th>Tempo Estimado (min)</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for dia in plano_diario %}
+                    <tr>
+                        <td>{{ dia.data }}</td>
+                        <td>{{ dia.dia_semana }}</td>
+                        <td>
+                        <div class="lista-capitulos">
+                            {% if dia.capitulos_str and "Descanso" not in dia.capitulos_str %}
+                                {% set lista_caps = dia.capitulos_str.split(', ') %}
+                                {% for cap_texto in lista_caps %}
+                                    {% set partes = cap_texto.split(' ') %}
+                                    {% if partes|length >= 2 %}
+                                        <a href="https://www.bibliaonline.com.br/nvi/{{ partes[0]|lower }}/{{ partes[1] }}" 
+                                           target="_blank" 
+                                           class="tag-capitulo">
+                                            {{ cap_texto }}
+                                        </a>
+                                    {% else %}
+                                        <span class="tag-capitulo">{{ cap_texto }}</span>
+                                    {% endif %}
+                                {% endfor %}
+                            {% else %}
+                                <span style="color: #888; font-style: italic;">{{ dia.capitulos_str }}</span>
+                            {% endif %}
+                        </div>
+                    </td>
+                        <td>{{ dia.tempo_usado }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
 
-                {% else %}
-                    <p>Não foi possível gerar um plano. Status: {{ status_solucao }}</p>
-                {% endif %}
+        {% else %}
+                <p>Não foi possível gerar um plano. Status: {{ status_solucao }}</p>
             {% endif %}
+        {% endif %}
             
     </main>
 </body>

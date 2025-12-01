@@ -245,3 +245,28 @@ input[type="submit"] {
     font-weight: bold;
 }
 
+.lista-capitulos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px; 
+}
+
+.tag-capitulo {
+    display: inline-block;
+    padding: 4px 8px;
+    background-color: #ffffff00;
+    color: #420772;         
+    border-radius: 4px;      
+    text-decoration: none;   
+    font-size: 0.85em;        
+    font-weight: 600;
+    border: 1px solid #F7E951;
+    transition: all 0.2s ease; 
+}
+
+.tag-capitulo:hover {
+    background-color: #420772;   
+    color: white;
+    border-color: #F7E951;
+    text-decoration: none;
+}
